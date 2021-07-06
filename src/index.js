@@ -12,16 +12,15 @@ const tranporter = nodemailer.createTransport({
   tls: {
     rejectUnauthorized: false
   },
-
 });
 
 async function run() {
   try {
-    const mailSend = await tranporter.sendMail({
-      text: "Olá mundo!",
+    await tranporter.sendMail({
+      text: "Olá, mundo!",
       subject: "Envio de emails",
       from: 'No Reply <noreply@gmail.com>',
-      to: ['joaoguilherme010301@gmail.com', 'danielalencar746@gmail.com'],
+      to: ['danielalencar746@gmail.com'],
     });
   } catch(error) {
     console.error(error);
